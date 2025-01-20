@@ -1,0 +1,44 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'cards/styles.css' %}">
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ card.term }}</title>
+</head>
+<body class="card-detail-container">
+    <div class="card">
+        <h1 class="word-term">{{ card.term }}</h1>
+        <div class="translation" id="translation" style="display: none;">
+            <p>{{ card.definition }}</p>
+        </div>
+        <button class="show-translation" onclick="toggleTranslation()">Показати переклад</button>
+    </div>
+
+    <div class="navigation">
+        {% if previous_card %}
+            <a href="{% url 'card_detail' previous_card.id %}" class="arrow left">Назад</a>
+        {% else %}
+            <div class="placeholder"></div>
+        {% endif %}
+        {% if next_card %}
+            <a href="{% url 'card_detail' next_card.id %}" class="arrow right">Далі</a>
+        {% else %}
+            <div class="placeholder"></div>
+        {% endif %}
+    </div>
+
+    <div class="footer">
+        <a href="{% url 'home' %}" class="arrow">Повернутися до списку наборів</a>
+    </div>
+
+    <script>
+        function toggleTranslation() {
+            const translation = document.getElementById('translation');
+            translation.style.display = translation.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>

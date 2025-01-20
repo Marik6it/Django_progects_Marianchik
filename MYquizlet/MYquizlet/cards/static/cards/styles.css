@@ -1,0 +1,342 @@
+/* Загальні стилі */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    animation: fadeIn 0.5s ease-in-out;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+}
+
+/* Анімація для сторінки */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Центрування контейнера */
+.card-detail-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Карточка */
+.card {
+    background: rgba(255, 255, 255, 0.7); /* Прозорість 75% */
+    backdrop-filter: blur(155px); /* Розмиття */
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    margin: 20px 0; /* Відступи зверху та знизу */
+}
+
+/* Заголовок */
+.word-term {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #ff758c;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+li .arrow {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    margin: 5px 0;
+    color: #fff;
+    background: #ff758c;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+li .arrow:hover {
+    background: #ff9a9e;
+    transform: translateY(-5px);
+}
+
+.show-translation {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #ff758c;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.show-translation:hover {
+    background: #ff9a9e;
+    transform: scale(1.05);
+}
+
+/* Вирівнювання кнопок "Назад" і "Далі" */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+.navigation .arrow {
+    font-size: 1.2rem;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    background: #ff758c;
+    border-radius: 25px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.navigation .arrow:hover {
+    background: #ff9a9e;
+    transform: translateY(-5px);
+}
+
+/* Закріплення кнопки внизу сторінки */
+.footer {
+    position: fixed;
+    bottom: 20px; /* Відступ від низу сторінки */
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.footer .arrow {
+    font-size: 1.2rem;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    background: #ff758c;
+    border-radius: 25px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.footer .arrow:hover {
+    background: #ff9a9e;
+    transform: scale(1.05);
+}
+
+/* Додаткові стилі для кнопки повернення */
+.return-home {
+    margin-top: 20px;
+}
+
+.return-home .arrow {
+    font-size: 1.2rem;
+    color: #fff;
+    background: #ff758c;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.return-home .arrow:hover {
+    background: #ff9a9e;
+    transform: translateY(-5px);
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.translation {
+    font-size: 1.8rem;
+    color: #333;
+    margin-top: 20px;
+    animation: slideDown 0.3s ease;
+}
+/* Плейсхолдер для вирівнювання кнопок */
+.navigation .placeholder {
+    display: inline-block;
+    width: 10px; /* Ширина, яка імітує кнопку */
+    height: 40px; /* Висота, як у кнопок */
+    margin: 0 20px; /* Відступи, щоб кнопка не зсувалась */
+}
+/* Центрування контейнера (підняти вище) */
+.card-detail-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Замість center, піднімемо контент */
+    min-height: 100vh;
+    padding-top: 40px; /* Додамо верхній відступ */
+    text-align: center;
+}
+
+/* Стиль картки (зробити довшою) */
+.card {
+    background: rgba(255, 255, 255, 0.7); /* Прозорий білий фон */
+    backdrop-filter: blur(10px); /* Легке розмиття */
+    padding: 50px 40px; /* Збільшуємо внутрішні відступи */
+    border-radius: 25px; /* Округлі кути */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Тінь */
+    width: 90%;
+    max-width: 700px; /* Зробимо трохи ширше */
+    min-height: 400px; /* Збільшимо мінімальну висоту */
+    text-align: center;
+    margin-top: 20px; /* Відступ зверху між картками */
+}
+
+/* Заголовок картки (зберігаємо стиль) */
+.word-term {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #ff758c;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Додамо трохи адаптивності */
+@media (max-width: 768px) {
+    .card {
+        padding: 30px 20px; /* Менші відступи на вузьких екранах */
+        min-height: 300px; /* Зменшена висота на мобільних */
+    }
+}
+/* Центрування вмісту картки */
+.card {
+    display: flex; /* Додаємо flex-контейнер */
+    flex-direction: column; /* Вміст у стовпчик */
+    align-items: center; /* Горизонтальне центрування */
+    justify-content: center; /* Вертикальне центрування */
+    background: rgba(255, 255, 255, 0.7); /* Прозорий білий фон */
+    backdrop-filter: blur(10px); /* Легке розмиття */
+    padding: 50px 40px; /* Внутрішні відступи */
+    border-radius: 25px; /* Округлі кути */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Тінь */
+    width: 90%;
+    max-width: 700px; /* Ширина картки */
+    min-height: 400px; /* Мінімальна висота */
+    text-align: center; /* Центрування тексту */
+    margin-top: 20px; /* Відступ зверху */
+}
+
+/* Кнопка внизу сторінки */
+.footer {
+    position: fixed; /* Фіксація внизу сторінки */
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.footer .arrow {
+    font-size: 1.2rem;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 24px;
+    background: #ff758c;
+    border-radius: 25px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.footer .arrow:hover {
+    background: #ff9a9e;
+    transform: scale(1.05);
+}
+.arrow {
+    font-size: 1.2rem;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 24px;
+    background: #ff758c;
+    border-radius: 25px;
+    display: inline-block;
+    margin-top: 10px; /* Відступ між кнопками */
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.arrow:hover {
+    background: #ff9a9e;
+    transform: scale(1.05);
+}
+/* Стилі для полів форми */
+input[type="text"], input[type="password"], textarea, select {
+    width: 100%; /* Займає всю ширину контейнера */
+    padding: 10px 15px; /* Внутрішні відступи */
+    margin: 10px 0; /* Відступи між полями */
+    border: 1px solid #ddd; /* Світлий бордюр */
+    border-radius: 25px; /* Заокруглені кути, як у кнопок */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легка тінь */
+    font-size: 1rem; /* Розмір тексту */
+    font-family: 'Arial', sans-serif; /* Стиль шрифту */
+}
+
+/* Кольори при фокусі на полі */
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus, select:focus {
+    border-color: #ff758c; /* Колір бордюру при фокусі */
+    outline: none; /* Забирає синю рамку */
+    box-shadow: 0 4px 8px rgba(255, 117, 140, 0.5); /* Тінь із кольором */
+}
+
+/* Для текстової області (textarea) */
+textarea {
+    resize: vertical; /* Дозволяє змінювати висоту */
+    min-height: 100px; /* Мінімальна висота */
+}
+.arrow {
+    font-size: 1.2rem;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 24px;
+    background: #ff758c;
+    border: none; /* Відсутність бордюру */
+    border-radius: 25px; /* Заокруглені кути */
+    display: inline-block;
+    margin-top: 10px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легка тінь */
+}
+
+.arrow:hover {
+    background: #ff9a9e;
+    transform: scale(1.05);
+}
+
+.arrow:focus {
+    outline: none; /* Прибираємо стандартну обведену рамку */
+    border: none; /* Видаляємо можливий чорний бордюр */
+    box-shadow: 0 0 8px rgba(255, 117, 140, 0.8); /* Додаємо кольорову тінь при фокусі */
+}
+/* Поля форми (input, textarea) */
+input[type="text"], input[type="password"], textarea, select {
+    font-family: 'Arial', sans-serif; /* Шрифт, як у всьому іншому тексті */
+    font-size: 1rem; /* Розмір тексту */
+    color: #333; /* Колір тексту */
+}

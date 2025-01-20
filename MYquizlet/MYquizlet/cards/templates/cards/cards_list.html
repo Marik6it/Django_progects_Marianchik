@@ -1,0 +1,28 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'cards/styles.css' %}">
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYquizlet - Картки</title>
+</head>
+<body class="card-detail-container">
+    <div class="card">
+        <h1 class="word-term">Картки</h1>
+        <ul>
+            {% for card in card_set.cards.all %}
+                <li>
+                    <strong>
+                        <a href="{% url 'card_detail' card.id %}" class="arrow">{{ card.term }}</a>
+                    </strong>
+                    - {{ card.definition }}
+                </li>
+            {% empty %}
+                <li>Немає доступних карток.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

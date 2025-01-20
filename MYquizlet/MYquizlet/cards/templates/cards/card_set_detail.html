@@ -1,0 +1,40 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'cards/styles.css' %}">
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ card_set.name }} - Картки</title>
+</head>
+<body class="card-detail-container">
+    <div class="card">
+        <h1 class="word-term">{{ card_set.name }}</h1>
+        <p>{{ card_set.description }}</p>
+        <h2>Картки:</h2>
+        <ul>
+            {% for card in card_set.cards.all %}
+                <li>
+                    <strong>
+                        {% if card.id %}
+                            <a href="{% url 'card_detail' card.id %}" class="arrow">{{ card.term }}</a>
+                        {% else %}
+                            {{ card.term }} (недоступно)
+                        {% endif %}
+                    </strong>
+                    - {{ card.definition }}
+                </li>
+            {% empty %}
+                <li>Немає доступних карток.</li>
+            {% endfor %}
+        </ul>
+        <div class="return-home">
+            <a href="{% url 'home' %}" class="arrow">Повернутися до списку наборів</a>
+        </div>
+        <div class="add-card">
+            <a href="{% url 'add_card' card_set.pk %}" class="arrow">Додати нову картку</a>
+        </div>
+    </div>
+</body>
+</html>

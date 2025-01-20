@@ -1,0 +1,22 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'cards/styles.css' %}">
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редагувати картку</title>
+</head>
+<body class="card-detail-container">
+    <div class="card">
+        <h1 class="word-term">Редагувати картку</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="arrow">Зберегти</button>
+        </form>
+        <a href="{% url 'card_set_detail' card.card_set.pk %}" class="arrow">Скасувати</a>
+    </div>
+</body>
+</html>

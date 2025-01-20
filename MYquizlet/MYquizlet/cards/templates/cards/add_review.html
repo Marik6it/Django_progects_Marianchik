@@ -1,0 +1,9 @@
+<div class="card">
+    <h1 class="word-term">Оцінити набір "{{ card_set.name }}"</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="arrow">Залишити відгук</button>
+    </form>
+    <a href="{% url 'card_set_detail' card_set.pk %}" class="arrow">Скасувати</a>
+</div>

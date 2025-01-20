@@ -1,0 +1,29 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'cards/styles.css' %}">
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Набори карток</title>
+</head>
+<body class="card-detail-container">
+    <div class="card">
+        <h1 class="word-term">Набори карток</h1>
+        <ul>
+            {% for set in card_sets %}
+                <li>
+                    <strong>
+                        <a href="{% url 'card_set_detail' set.id %}" class="arrow">{{ set.name }}</a>
+                    </strong>
+                    <br>
+                    <small>Створено: {{ set.created_at|date:"d.m.Y о H:i" }}</small>
+                </li>
+            {% empty %}
+                <li>Немає доступних наборів.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
